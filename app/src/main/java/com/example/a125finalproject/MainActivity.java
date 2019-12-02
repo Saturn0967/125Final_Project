@@ -15,6 +15,10 @@ import android.widget.Toast;
 public final class MainActivity extends AppCompatActivity{
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout);
+        setContentView(R.layout.mainlayout);
+        Button standingButton = findViewById(R.id.standingButton);
+        Button teamButton = findViewById(R.id.teamButton);
+        final Intent intent_standing = new Intent(this, Standing.class);
+        final Intent intent_team = new Intent(this, team.class);
     }
 }
