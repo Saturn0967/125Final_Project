@@ -20,5 +20,7 @@ public final class MainActivity extends AppCompatActivity{
         Button teamButton = findViewById(R.id.teamButton);
         final Intent intent_standing = new Intent(this, Standing.class);
         final Intent intent_team = new Intent(this, team.class);
+        standingButton.setOnClickListener(unused -> startActivity(intent_standing));
+        teamButton.setOnClickListener(unused -> startActivity(intent_team));
     }
 }
