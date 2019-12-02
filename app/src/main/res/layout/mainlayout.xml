@@ -22,13 +22,12 @@
     </Button>
 
     <Button
+        android:id="@+id/teamButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/teamButton"
-        android:text="Current Standing"
         android:layout_marginTop="10dp"
-        android:textAlignment="center">
-    </Button>
+        android:text="Team Squad"
+        android:textAlignment="center"></Button>
 
 
 </LinearLayout>
