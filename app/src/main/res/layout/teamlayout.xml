@@ -11,18 +11,37 @@
         android:text="Back"/>
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:text="Which team are you looking for??"
         android:textAlignment="center"
-        android:textSize="20dp"/>
+        android:textSize="20dp" />
 
     <Spinner
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="wrap_content"
         android:id="@+id/teamSquadSpinner"
-        android:layout_marginTop="50dp"
-        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
-        android:outlineSpotShadowColor="@color/colorAccent"/>
+        android:layout_marginTop="10dp"
+        android:entries="@array/team_arrays"
+        android:prompt="@string/team_prompt" />
+
+    <Button
+        android:id="@+id/confirmSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <LinearLayout
+        android:id="@+id/squadInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"></LinearLayout>
 
 </LinearLayout>

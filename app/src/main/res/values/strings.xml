@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">125Final Project</string>
+    <string name="team_prompt">Choose a team</string>
+
+    <string-array name="team_arrays">
+        <item>Arsenal</item>
+        <item>Aston Villa</item>
+        <item>Bournemouth</item>
+        <item>Brighton</item>
+        <item>Burnley</item>
+        <item>Chelsea</item>
+        <item>Crystal Palace</item>
+        <item>Everton</item>
+        <item>Leicester City</item>
+        <item>Liverpool</item>
+        <item>Man City</item>
+        <item>Man Utd</item>
+        <item>Newcastle</item>
+        <item>Norwich City</item>
+        <item>Sheff Utd</item>
+        <item>Southampton</item>
+        <item>Tottenham</item>
+        <item>Watford</item>
+        <item>West Ham</item>
+        <item>Wolves</item>
+    </string-array>
 </resources>
