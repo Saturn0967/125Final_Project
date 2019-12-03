@@ -23,8 +23,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.w3c.dom.Text;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,57 +40,58 @@ public class team extends AppCompatActivity {
         back.setOnClickListener(unused -> startActivity(startpage));
         TextView textView = findViewById(R.id.textView);
         Spinner spinner = findViewById(R.id.teamSquadSpinner);
+        Button confirm = findViewById(R.id.confirmSelection);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(final AdapterView<?> parent, final View view,
                                        final int position, final long id) {
                 idTeam = teamID[position];
+                confirm.setOnClickListener(unused -> {
+                    RequestQueue queue = Volley.newRequestQueue(team.this);
+                    String url = "https://api.football-data.org/v2/teams/" + idTeam;
+                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                            new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(final String response) {
+                            textView.setText("Nice");
+                            JsonElement squadAsElement = parseString(response);
+                            JsonObject squadAsObject = squadAsElement.getAsJsonObject();
+                            JsonArray squadAsList = squadAsObject.get("squad").getAsJsonArray();
+                            ScrollView squadScrollView = findViewById(R.id.squadScrollView);
+                            LinearLayout squadLayout = squadScrollView.findViewById(R.id.squadLayout);
+                            squadLayout.removeAllViews();
+                            for (JsonElement players : squadAsList) {
+                                if (players.getAsJsonObject().get("role").getAsString().equals("PLAYER")) {
+                                    View squadChunk = getLayoutInflater().inflate(R.layout.chunk_squad_list,
+                                            squadLayout, false);
+                                    JsonObject playerObject = players.getAsJsonObject();
+                                    TextView position = squadChunk.findViewById(R.id.position);
+                                    position.setText(playerObject.get("position").getAsString());
+                                    TextView nationality = squadChunk.findViewById(R.id.nationality);
+                                    nationality.setText(playerObject.get("nationality").getAsString());
+                                    TextView name = squadChunk.findViewById(R.id.name);
+                                    name.setText(playerObject.get("name").getAsString());
+                                    squadLayout.addView(squadChunk);
+                                }
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            textView.setText("That didn't work!");
+                        }
+                    }) {
+                        @Override
+                        public Map<String, String> getHeaders() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<>();
+                            params.put("X-Auth-Token", "771cf98b010b400aa6d66534393e4d4a");
+                            return params;
+                        }
+                    };
+                    queue.add(stringRequest);
+                });
             }
             public void onNothingSelected(final AdapterView<?> parent) {
             }
-        });
-        Button confirm = findViewById(R.id.confirmSelection);
-        confirm.setOnClickListener(unused -> {
-            RequestQueue queue = Volley.newRequestQueue(team.this);
-            String url = "https://api.football-data.org/v2/teams/" + idTeam;
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                    new Response.Listener<String>() {
-                @Override
-                public void onResponse(final String response) {
-                    textView.setText("Nice");
-                    JsonElement squadAsElement = parseString(response);
-                    JsonObject squadAsObject = squadAsElement.getAsJsonObject();
-                    JsonArray squadAsList = squadAsObject.get("squad").getAsJsonArray();
-                    ScrollView squadScrollView = findViewById(R.id.squadScrollView);
-                    LinearLayout squadLayout = squadScrollView.findViewById(R.id.squadLayout);
-                    for (JsonElement players : squadAsList) {
-                        if (players.getAsJsonObject().get("role").getAsString().equals("PLAYER")) {
-                            View squadChunk = getLayoutInflater().inflate(R.layout.chunk_squad_list,
-                                    squadLayout, false);
-                            JsonObject playerObject = players.getAsJsonObject();
-                            TextView position = squadChunk.findViewById(R.id.position);
-                            position.setText(playerObject.get("position").getAsString());
-                            TextView nationality = squadChunk.findViewById(R.id.nationality);
-                            nationality.setText(playerObject.get("nationality").getAsString());
-                            TextView name = squadChunk.findViewById(R.id.name);
-                            name.setText(playerObject.get("name").getAsString());
-                            squadLayout.addView(squadChunk);
-                        }
-                    }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    textView.setText("That didn't work!");
-                }
-            }) {
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("X-Auth-Token", "771cf98b010b400aa6d66534393e4d4a");
-                    return params;
-                }
-            };
-            queue.add(stringRequest);
         });
     }
 }
