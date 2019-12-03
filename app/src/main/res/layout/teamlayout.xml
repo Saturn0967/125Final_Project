@@ -3,4 +3,26 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:id="@+id/back1"
+
+        android:text="Back"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Which team are you looking for??"
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:id="@+id/teamSquadSpinner"
+        android:layout_marginTop="50dp"
+        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+        android:outlineSpotShadowColor="@color/colorAccent"/>
+
 </LinearLayout>

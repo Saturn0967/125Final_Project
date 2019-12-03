@@ -1,5 +1,6 @@
 package com.example.a125finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,9 @@ public class Standing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.standinglayout);
         Button button = findViewById(R.id.button);
+        final Intent startpage = new Intent(this, MainActivity.class);
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(unused -> startActivity(startpage));
         TextView textView = findViewById(R.id.textView);
         button.setOnClickListener(unused -> {
             RequestQueue queue = Volley.newRequestQueue(this);

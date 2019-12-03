@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:outlineAmbientShadowColor="@android:color/darker_gray">
 
     <TextView
         android:layout_width="match_parent"
@@ -28,6 +29,25 @@
         android:layout_marginTop="10dp"
         android:text="Team Squad"
         android:textAlignment="center"></Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Designed by:"
+        android:textSize="50dp"
+        android:textAlignment="center"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Zhongqi Liang"
+        android:textSize="50dp"
+        android:textAlignment="center"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Tianjie Qiu"
+        android:textAlignment="center"
+        android:textSize="50dp"></TextView>
 
 
 </LinearLayout>
