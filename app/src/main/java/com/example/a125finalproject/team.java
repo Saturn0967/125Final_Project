@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,6 +23,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +33,7 @@ import static com.google.gson.JsonParser.parseString;
 public class team extends AppCompatActivity {
     protected final int[] teamID = {57, 58, 1044, 328, 397, 61, 354, 62, 338, 64,
             65, 66, 67, 68, 356, 340, 73, 346, 563, 76};
-    protected int idTeam;
+    protected int idTeam = 57;
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teamlayout);
@@ -56,7 +59,23 @@ public class team extends AppCompatActivity {
                 @Override
                 public void onResponse(final String response) {
                     textView.setText("Nice");
-                    // JsonElement squadAsElement = parseString(response);
+                    JsonElement squadAsElement = parseString(response);
+                    JsonObject squadAsObject = squadAsElement.getAsJsonObject();
+                    JsonArray squadAsList = squadAsObject.get("squad").getAsJsonArray();
+                    ScrollView squadScrollView = findViewById(R.id.squadScrollView);
+                    LinearLayout squadLayout = squadScrollView.findViewById(R.id.squadLayout);
+                    for (JsonElement players : squadAsList) {
+                        View squadChunk = getLayoutInflater().inflate(R.layout.chunk_squad_list,
+                                squadLayout, false);
+                        JsonObject playerObject = players.getAsJsonObject();
+                        TextView position = squadChunk.findViewById(R.id.position);
+                        position.setText(playerObject.get("").getAsString());
+                        TextView nationality = squadChunk.findViewById(R.id.nationality);
+                        nationality.setText(playerObject.get("nationality").getAsString());
+                        TextView name = squadChunk.findViewById(R.id.name);
+                        name.setText(playerObject.get("name").getAsString());
+                        squadLayout.addView(squadChunk);
+                    }
                 }
             }, new Response.ErrorListener() {
                 @Override
