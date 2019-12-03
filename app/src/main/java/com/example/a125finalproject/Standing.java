@@ -51,7 +51,7 @@ public class Standing extends AppCompatActivity {
                     JsonObject standings = standingsArray.get(0).getAsJsonObject();
                     JsonArray tableArray = standings.get("table").getAsJsonArray();
                     LinearLayout standingsLayout = findViewById(R.id.StandingList);
-                    int count = 0;
+                    standingsLayout.removeAllViews();
                     for (int i = 0; i < 20; i++) {
                         JsonElement teamStanding = tableArray.get(i);
                         View standingChunk = getLayoutInflater().inflate(R.layout.chunk_standing_list,
@@ -72,7 +72,6 @@ public class Standing extends AppCompatActivity {
                         TextView points = standingChunk.findViewById(R.id.points);
                         points.setText(standingAsObject.get("points").getAsString());
                         standingsLayout.addView(standingChunk);
-                        count++;
                     }
                     standing.setVisibility(View.VISIBLE);
                 }

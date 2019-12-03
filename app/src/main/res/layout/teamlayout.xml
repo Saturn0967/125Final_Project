@@ -16,6 +16,7 @@
         android:layout_height="30dp"
         android:text="Which team are you looking for??"
         android:textAlignment="center"
+        android:background="@color/colorPrimaryDark"
         android:textSize="20dp" />
 
     <Spinner
