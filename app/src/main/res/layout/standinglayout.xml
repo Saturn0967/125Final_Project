@@ -16,21 +16,50 @@
         android:text="Get Table" />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        android:id="@+id/saosdfh">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:text="Team Name"
+            android:textAlignment="center"></TextView>
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:text="M.P."
+            android:textAlignment="center"></TextView>
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:text="W."
+            android:textAlignment="center"></TextView>
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:text="D."
+            android:textAlignment="center"></TextView>
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:text="L."
+            android:textAlignment="center"></TextView>
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:text="Pts"
+            android:textAlignment="center"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/StandingList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/squadInformation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

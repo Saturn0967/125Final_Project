@@ -2,6 +2,7 @@ package com.example.a125finalproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -35,7 +36,8 @@ public class Standing extends AppCompatActivity {
         final Intent startpage = new Intent(this, MainActivity.class);
         Button back = findViewById(R.id.back);
         back.setOnClickListener(unused -> startActivity(startpage));
-        TextView textView = findViewById(R.id.textView);
+        LinearLayout standing = findViewById(R.id.saosdfh);
+        standing.setVisibility(View.INVISIBLE);
         button.setOnClickListener(unused -> {
             RequestQueue queue = Volley.newRequestQueue(this);
             String url = "https://api.football-data.org/v2/competitions/2021/standings";
@@ -43,20 +45,6 @@ public class Standing extends AppCompatActivity {
                 new Response.Listener<String>() {
                 @Override
                 public void onResponse(final String response) {
-                    // textView.setText("Nice");
-                    /* try {
-                        JsonElement standingsElement = parseString(response).getAsJsonObject();
-                        JsonObject standingsObject = standingsElement.getAsJsonObject();
-                        JsonArray standingsArray = standingsObject.get("standings").getAsJsonArray();
-                        JsonObject standings = standingsArray.get(0).getAsJsonObject();
-                        JsonArray tableArray = standings.get("table").getAsJsonArray();
-                        // JsonObject table = standings.get("table").getAsJsonObject();
-                        // JsonArray positionArray = table.get("position").getAsJsonArray();
-                        // JsonArray teamArray = table.get("team").getAsJsonArray();
-                        // LinearLayout standingsLayout = findViewById(R.id.StandingList);
-                    } catch (Exception e) {
-                        textView.setText("U");
-                    } */
                     JsonElement standingsElement = parseString(response).getAsJsonObject();
                     JsonObject standingsObject = standingsElement.getAsJsonObject();
                     JsonArray standingsArray = standingsObject.get("standings").getAsJsonArray();
@@ -64,9 +52,6 @@ public class Standing extends AppCompatActivity {
                     JsonArray tableArray = standings.get("table").getAsJsonArray();
                     LinearLayout standingsLayout = findViewById(R.id.StandingList);
                     int count = 0;
-                    // if (tableArray.size() == 20) {
-                    //    textView.setText("true");
-                    //}
                     for (int i = 0; i < 20; i++) {
                         JsonElement teamStanding = tableArray.get(i);
                         View standingChunk = getLayoutInflater().inflate(R.layout.chunk_standing_list,
@@ -89,12 +74,12 @@ public class Standing extends AppCompatActivity {
                         standingsLayout.addView(standingChunk);
                         count++;
                     }
-                    textView.setText("count is " + count);
+                    standing.setVisibility(View.VISIBLE);
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    textView.setText("That didn't work!");
+                    int a = 1;
                 }
             }) {
                 @Override
