@@ -38,7 +38,6 @@ public class team extends AppCompatActivity {
         final Intent startpage = new Intent(this, MainActivity.class);
         Button back = findViewById(R.id.back1);
         back.setOnClickListener(unused -> startActivity(startpage));
-        TextView textView = findViewById(R.id.textView);
         Spinner spinner = findViewById(R.id.teamSquadSpinner);
         Button confirm = findViewById(R.id.confirmSelection);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -52,7 +51,6 @@ public class team extends AppCompatActivity {
                             new Response.Listener<String>() {
                         @Override
                         public void onResponse(final String response) {
-                            textView.setText("Nice");
                             JsonElement squadAsElement = parseString(response);
                             JsonObject squadAsObject = squadAsElement.getAsJsonObject();
                             JsonArray squadAsList = squadAsObject.get("squad").getAsJsonArray();
@@ -77,7 +75,7 @@ public class team extends AppCompatActivity {
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            textView.setText("That didn't work!");
+                            int a = 1;
                         }
                     }) {
                         @Override
