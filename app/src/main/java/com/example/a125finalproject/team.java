@@ -65,16 +65,18 @@ public class team extends AppCompatActivity {
                     ScrollView squadScrollView = findViewById(R.id.squadScrollView);
                     LinearLayout squadLayout = squadScrollView.findViewById(R.id.squadLayout);
                     for (JsonElement players : squadAsList) {
-                        View squadChunk = getLayoutInflater().inflate(R.layout.chunk_squad_list,
-                                squadLayout, false);
-                        JsonObject playerObject = players.getAsJsonObject();
-                        TextView position = squadChunk.findViewById(R.id.position);
-                        position.setText(playerObject.get("").getAsString());
-                        TextView nationality = squadChunk.findViewById(R.id.nationality);
-                        nationality.setText(playerObject.get("nationality").getAsString());
-                        TextView name = squadChunk.findViewById(R.id.name);
-                        name.setText(playerObject.get("name").getAsString());
-                        squadLayout.addView(squadChunk);
+                        if (players.getAsJsonObject().get("role").getAsString().equals("PLAYER")) {
+                            View squadChunk = getLayoutInflater().inflate(R.layout.chunk_squad_list,
+                                    squadLayout, false);
+                            JsonObject playerObject = players.getAsJsonObject();
+                            TextView position = squadChunk.findViewById(R.id.position);
+                            position.setText(playerObject.get("position").getAsString());
+                            TextView nationality = squadChunk.findViewById(R.id.nationality);
+                            nationality.setText(playerObject.get("nationality").getAsString());
+                            TextView name = squadChunk.findViewById(R.id.name);
+                            name.setText(playerObject.get("name").getAsString());
+                            squadLayout.addView(squadChunk);
+                        }
                     }
                 }
             }, new Response.ErrorListener() {
