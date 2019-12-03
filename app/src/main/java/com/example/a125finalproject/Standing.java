@@ -59,9 +59,10 @@ public class Standing extends AppCompatActivity {
                     JsonObject standings = standingsArray.get(0).getAsJsonObject();
                     JsonArray tableArray = standings.get("table").getAsJsonArray();
                     LinearLayout standingsLayout = findViewById(R.id.StandingList);
-                    if (tableArray.size() == 20) {
-                        textView.setText("true");
-                    }
+                    int count = 0;
+                    // if (tableArray.size() == 20) {
+                    //    textView.setText("true");
+                    //}
                     for (int i = 0; i < 20; i++) {
                         JsonElement teamStanding = tableArray.get(i);
                         View standingChunk = getLayoutInflater().inflate(R.layout.chunk_standing_list,
@@ -82,7 +83,9 @@ public class Standing extends AppCompatActivity {
                         TextView points = standingChunk.findViewById(R.id.points);
                         points.setText(standingAsObject.get("points").getAsString());
                         standingsLayout.addView(standingChunk);
+                        count++;
                     }
+                    textView.setText("count is " + count);
                 }
             }, new Response.ErrorListener() {
                 @Override
