@@ -41,6 +41,7 @@ public class team extends AppCompatActivity {
         back.setOnClickListener(unused -> startActivity(startpage));
         Spinner spinner = findViewById(R.id.teamSquadSpinner);
         Button confirm = findViewById(R.id.confirmSelection);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(final AdapterView<?> parent, final View view,
                                        final int position, final long id) {
@@ -52,10 +53,14 @@ public class team extends AppCompatActivity {
                             new Response.Listener<String>() {
                         @Override
                         public void onResponse(final String response) {
+                            String team = spinner.getSelectedItem().toString();
                             JsonElement squadAsElement = parseString(response);
                             JsonObject squadAsObject = squadAsElement.getAsJsonObject();
                             JsonArray squadAsList = squadAsObject.get("squad").getAsJsonArray();
                             ScrollView squadScrollView = findViewById(R.id.squadScrollView);
+                            TextView title = findViewById(R.id.title);
+                            title.setText("Currently looking at members of: " + team);
+                            confirm.setText("see another team");
                             LinearLayout squadLayout = squadScrollView.findViewById(R.id.squadLayout);
                             squadLayout.removeAllViews();
                             for (JsonElement players : squadAsList) {
@@ -83,6 +88,8 @@ public class team extends AppCompatActivity {
                                         color11.setBackgroundColor(parseColor("#FF0000"));
                                     }
                                     squadLayout.addView(squadChunk);
+                                    TextView dada = squadChunk.findViewById(R.id.dada);
+                                    dada.setBackgroundColor(parseColor("#808080"));
                                 }
                             }
                         }

@@ -18,19 +18,23 @@
         android:textAlignment="center"
         android:textSize="20dp" />
 
-    <Spinner
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/teamSquadSpinner"
-        android:layout_marginTop="10dp"
-        android:entries="@array/team_arrays"
-        android:prompt="@string/team_prompt" />
+        android:orientation="horizontal">
+        <Spinner
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:id="@+id/teamSquadSpinner"
+            android:entries="@array/team_arrays"
+            android:prompt="@string/team_prompt" />
 
-    <Button
-        android:id="@+id/confirmSelection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Confirm" />
+        <Button
+            android:id="@+id/confirmSelection"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="Confirm" />
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/squadScrollView"

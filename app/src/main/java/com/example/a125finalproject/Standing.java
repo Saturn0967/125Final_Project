@@ -86,6 +86,8 @@ public class Standing extends AppCompatActivity {
                             color.setBackgroundColor(parseColor("#FF0000"));
                         }
                         standingsLayout.addView(standingChunk);
+                        Button dada = findViewById(R.id.button);
+                        dada.setText("Renew");
                     }
                 }
             }, new Response.ErrorListener() {
