@@ -36,8 +36,6 @@ public class Standing extends AppCompatActivity {
         final Intent startpage = new Intent(this, MainActivity.class);
         Button back = findViewById(R.id.back);
         back.setOnClickListener(unused -> startActivity(startpage));
-        LinearLayout standing = findViewById(R.id.saosdfh);
-        standing.setVisibility(View.INVISIBLE);
         button.setOnClickListener(unused -> {
             RequestQueue queue = Volley.newRequestQueue(this);
             String url = "https://api.football-data.org/v2/competitions/2021/standings";
@@ -52,6 +50,9 @@ public class Standing extends AppCompatActivity {
                     JsonArray tableArray = standings.get("table").getAsJsonArray();
                     LinearLayout standingsLayout = findViewById(R.id.StandingList);
                     standingsLayout.removeAllViews();
+                    View title = getLayoutInflater().inflate(R.layout.chunk_standing_list,
+                            standingsLayout, false);
+                    standingsLayout.addView(title);
                     for (int i = 0; i < 20; i++) {
                         JsonElement teamStanding = tableArray.get(i);
                         View standingChunk = getLayoutInflater().inflate(R.layout.chunk_standing_list,
@@ -73,7 +74,6 @@ public class Standing extends AppCompatActivity {
                         points.setText(standingAsObject.get("points").getAsString());
                         standingsLayout.addView(standingChunk);
                     }
-                    standing.setVisibility(View.VISIBLE);
                 }
             }, new Response.ErrorListener() {
                 @Override

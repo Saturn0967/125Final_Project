@@ -8,49 +8,48 @@
         android:id="@+id/position"
         android:layout_width="15dp"
         android:layout_height="50dp"
-        android:layout_weight="1"
-        android:text="position" />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/team"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="team" />
+        android:text="Team Name" />
 
     <TextView
         android:id="@+id/played"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="played" />
+        android:text="M.P." />
 
     <TextView
         android:id="@+id/won"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="won" />
+        android:text="W." />
 
     <TextView
         android:id="@+id/drew"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="drew" />
+        android:text="D." />
 
     <TextView
         android:id="@+id/lost"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="lost" />
+        android:text="L." />
 
     <TextView
         android:id="@+id/points"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="points" />
+        android:text="Pts" />
 
 </LinearLayout>

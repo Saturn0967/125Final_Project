@@ -10,44 +10,51 @@
         android:text="Pocket PL"
         android:textAlignment="center"
         android:textSize="75dp"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="100dp"
+        android:textColor="#aa00aa"
+        android:textAllCaps="true">
     </TextView>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:id="@+id/standingButton"
         android:text="Current Standing"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
+        android:textSize="50dp"
         android:textAlignment="center">
     </Button>
 
     <Button
         android:id="@+id/teamButton"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginTop="10dp"
         android:text="Team Squad"
-        android:textAlignment="center"></Button>
+        android:textAlignment="center"
+        android:textSize="50dp"></Button>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:text="Designed by:"
         android:textSize="50dp"
+        android:textColor="#0f0"
         android:textAlignment="center"></TextView>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:text="Zhongqi Liang"
         android:textSize="50dp"
-        android:textAlignment="center"></TextView>
+        android:textAlignment="center"
+        android:textColor="#f00"></TextView>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:text="Tianjie Qiu"
         android:textAlignment="center"
-        android:textSize="50dp"></TextView>
+        android:textSize="50dp"
+        android:textColor="#0ff"></TextView>
 
 
 </LinearLayout>
