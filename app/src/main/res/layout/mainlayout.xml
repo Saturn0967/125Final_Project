@@ -6,10 +6,10 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:text="Pocket PL"
         android:textAlignment="center"
-        android:textSize="60dp"
+        android:textSize="100dp"
         android:layout_marginTop="100dp"
         android:textColor="#aa00aa"
         android:textAllCaps="true">
@@ -20,7 +20,7 @@
         android:layout_height="50dp"
         android:id="@+id/standingButton"
         android:text="Current Standing"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:textAlignment="center">
     </Button>
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Designed by:"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:textSize="50dp"
         android:textColor="#FF7F00"
         android:textAlignment="center"></TextView>
