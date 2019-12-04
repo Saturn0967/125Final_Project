@@ -34,27 +34,47 @@
         android:textAlignment="center"
         android:textSize="20dp"></Button>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/dadaButton"
+        android:text="Bonus"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textAlignment="center">
+    </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/ddidi"
+        android:text="boBonus"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textAlignment="center">
+    </Button>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:text="Designed by:"
         android:layout_marginTop="10dp"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textColor="#FF7F00"
         android:textAlignment="center"></TextView>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:text="Zhongqi Liang"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="#f00"></TextView>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:text="Tianjie Qiu"
         android:textAlignment="center"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textColor="#FFC0CB"></TextView>
 
 

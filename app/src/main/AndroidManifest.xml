@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".Standing" />
         <activity android:name=".team" />
+        <activity android:name=".dadagame"/>
+        <activity android:name=".didigame"/>
 
     </application>
 

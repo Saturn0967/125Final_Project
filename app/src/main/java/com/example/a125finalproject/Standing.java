@@ -87,7 +87,7 @@ public class Standing extends AppCompatActivity {
                         }
                         standingsLayout.addView(standingChunk);
                         Button dada = findViewById(R.id.button);
-                        dada.setText("Renew");
+                        dada.setText("Refresh(Click as fast as you can! See what happens)");
                     }
                 }
             }, new Response.ErrorListener() {
