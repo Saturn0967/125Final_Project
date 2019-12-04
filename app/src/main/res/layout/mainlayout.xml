@@ -9,31 +9,29 @@
         android:layout_height="100dp"
         android:text="Pocket PL"
         android:textAlignment="center"
-        android:textSize="75dp"
+        android:textSize="60dp"
         android:layout_marginTop="100dp"
         android:textColor="#aa00aa"
         android:textAllCaps="true">
     </TextView>
 
     <Button
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/standingButton"
         android:text="Current Standing"
         android:layout_marginTop="100dp"
         android:textSize="20dp"
-        android:layout_marginLeft="68dp"
         android:textAlignment="center">
     </Button>
 
     <Button
         android:id="@+id/teamButton"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:text="Team Squad"
         android:textAlignment="center"
-        android:layout_marginLeft="68dp"
         android:textSize="20dp"></Button>
 
     <TextView
