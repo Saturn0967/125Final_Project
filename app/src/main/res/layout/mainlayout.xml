@@ -16,30 +16,33 @@
     </TextView>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:id="@+id/standingButton"
         android:text="Current Standing"
-        android:layout_marginTop="30dp"
-        android:textSize="50dp"
+        android:layout_marginTop="100dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="68dp"
         android:textAlignment="center">
     </Button>
 
     <Button
         android:id="@+id/teamButton"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:text="Team Squad"
         android:textAlignment="center"
-        android:textSize="50dp"></Button>
+        android:layout_marginLeft="68dp"
+        android:textSize="20dp"></Button>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Designed by:"
+        android:layout_marginTop="50dp"
         android:textSize="50dp"
-        android:textColor="#0f0"
+        android:textColor="#FF7F00"
         android:textAlignment="center"></TextView>
     <TextView
         android:layout_width="match_parent"
@@ -54,7 +57,7 @@
         android:text="Tianjie Qiu"
         android:textAlignment="center"
         android:textSize="50dp"
-        android:textColor="#0ff"></TextView>
+        android:textColor="#FFC0CB"></TextView>
 
 
 </LinearLayout>
