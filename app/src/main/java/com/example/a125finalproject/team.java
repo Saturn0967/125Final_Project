@@ -26,6 +26,7 @@ import com.google.gson.JsonObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.graphics.Color.parseColor;
 import static com.google.gson.JsonParser.parseString;
 
 public class team extends AppCompatActivity {
@@ -68,6 +69,19 @@ public class team extends AppCompatActivity {
                                     nationality.setText(playerObject.get("nationality").getAsString());
                                     TextView name = squadChunk.findViewById(R.id.name);
                                     name.setText(playerObject.get("name").getAsString());
+                                    TextView color11 = squadChunk.findViewById(R.id.color11);
+                                    if (playerObject.get("position").getAsString().equals("Goalkeeper")) {
+                                        color11.setBackgroundColor(parseColor("#FF7F00"));
+                                    }
+                                    if (playerObject.get("position").getAsString().equals("Defender")) {
+                                        color11.setBackgroundColor(parseColor("#00FF00"));
+                                    }
+                                    if (playerObject.get("position").getAsString().equals("Midfielder")) {
+                                        color11.setBackgroundColor(parseColor("#0000FF"));
+                                    }
+                                    if (playerObject.get("position").getAsString().equals("Attacker")) {
+                                        color11.setBackgroundColor(parseColor("#FF0000"));
+                                    }
                                     squadLayout.addView(squadChunk);
                                 }
                             }

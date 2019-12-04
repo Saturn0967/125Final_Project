@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="Pocket PL"
         android:textAlignment="center"
-        android:textSize="75dp"
+        android:textSize="85dp"
         android:layout_marginTop="100dp"
         android:textColor="#aa00aa"
         android:textAllCaps="true">

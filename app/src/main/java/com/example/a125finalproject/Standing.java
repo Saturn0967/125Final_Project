@@ -26,6 +26,7 @@ import org.w3c.dom.Text;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.graphics.Color.parseColor;
 import static com.google.gson.JsonParser.parseString;
 
 public class Standing extends AppCompatActivity {
@@ -72,6 +73,18 @@ public class Standing extends AppCompatActivity {
                         lost.setText(standingAsObject.get("lost").getAsString());
                         TextView points = standingChunk.findViewById(R.id.points);
                         points.setText(standingAsObject.get("points").getAsString());
+                        if (i < 4) {
+                            TextView color = standingChunk.findViewById(R.id.colorblock);
+                            color.setBackgroundColor(parseColor("#0000FF"));
+                        }
+                        if (i >= 4 && i <= 6) {
+                            TextView color = standingChunk.findViewById(R.id.colorblock);
+                            color.setBackgroundColor(parseColor("#00FF00"));
+                        }
+                        if (i >= 17) {
+                            TextView color = standingChunk.findViewById(R.id.colorblock);
+                            color.setBackgroundColor(parseColor("#FF0000"));
+                        }
                         standingsLayout.addView(standingChunk);
                     }
                 }
