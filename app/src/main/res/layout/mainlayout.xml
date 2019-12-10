@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/dadaButton"
-        android:text="Bonus"
+        android:text="Easter Egg"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:textAlignment="center">
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/ddidi"
-        android:text="boBonus"
+        android:text="Easteaster Egg"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:textAlignment="center">
